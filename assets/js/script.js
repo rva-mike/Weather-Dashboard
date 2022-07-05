@@ -1,4 +1,4 @@
-
+//variables 
 var searchButtonEl = document.querySelector(".search");
 var inputValueEl = document.querySelector(".inputValue");
 var nameEl = document.querySelector(".name");
@@ -12,8 +12,6 @@ var dayThree5 = document.querySelector(".dayThree")
 var dayFour5 = document.querySelector(".dayFour")
 var dayFive5 = document.querySelector(".dayFive")
 var todayDate = document.querySelector(".currentDay")
-
-var tempEl1 = document.querySelector("temp-1")
 
 
 
@@ -50,6 +48,7 @@ searchButtonEl.addEventListener("click", function () {
         .then(response => response.json())
         .then(data => {
             console.log(data)
+
             var firstDay = "<b>Temp: </b>" + data['list'][1]["main"]["temp"] + "&#176F. " + "<br>" + "<b>Wind: </b>" + data["list"][1]["wind"]["speed"] + " MPH" + "<br>" + "<b>Humidity: </b>" + data["list"][1]["main"]["humidity"] + "%";
 
             dayOne5.innerHTML = firstDay;
@@ -86,6 +85,8 @@ searchButtonEl.addEventListener("click", function () {
 })
 
 
+
+localStorage.setItem(hour, text);
 
 
 // var currentDate = moment().format("dddd, MMMM Do")
