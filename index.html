@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Weather Dashboard</title>
 </head>
+
 <body>
-    
+
+    <!-- As a heading -->
+    <nav class="navbar bg-primary">
+        <div class="container-fluid justify-content-center">
+            <span class="navbar h1 text-white">Weather Dashboard</span>
+        </div>
+    </nav>
+
+    <!-- side bar area  -->
+    <div class="container-fluid p-3 m-0 ">
+        <div class="row justify-content-between">
+            <div class="col-3">
+                <h3>Search for a City</h3>
+                <div class="input-group flex-nowrap">
+                    <input type="text" class="form-control inputValue" placeholder="Richmond">
+                </div>
+                <div class="d-grid ">
+                    <button class="mt-3 btn btn-primary search" type="button">Search</button>
+                </div>
+                <div id="border-bottom"></div>
+
+                <div class="d-grid gap-2">
+                    <button class="mt-3 btn btn-secondary" type="button">Button</button>
+                </div>
+            </div>
 
 
 
-
-    <script src="./assets/js/script.js"></script>
+            <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
