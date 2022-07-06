@@ -33,10 +33,6 @@ searchButtonEl.addEventListener("click", function () {
             humidityEl.innerHTML = humidityValue;
             uvIndexEl.innerHTML = uvIndexValue;
             todayDate.innerHTML = currentDate;
-
-
-
-
         })
 })
 
@@ -48,25 +44,27 @@ searchButtonEl.addEventListener("click", function () {
         .then(response => response.json())
         .then(data => {
             console.log(data)
-
-            var firstDay = "<b>Temp: </b>" + data['list'][1]["main"]["temp"] + "&#176F. " + "<br>" + "<b>Wind: </b>" + data["list"][1]["wind"]["speed"] + " MPH" + "<br>" + "<b>Humidity: </b>" + data["list"][1]["main"]["humidity"] + "%";
-
-            dayOne5.innerHTML = firstDay;
+            
 
 
-            var secondDay = "<b>Temp: </b>" + data['list'][2]["main"]["temp"] + "&#176F. " + "<br>" + "<b>Wind: </b>" + data["list"][2]["wind"]["speed"] + " MPH" + "<br>" + "<b>Humidity: </b>" + data["list"][2]["main"]["humidity"] + "%";
+            var firstDay = data["list"][5]["dt_txt"] + "<br>" + "<b>Temp: </b>" + data['list'][5]["main"]["temp"] + "&#176F. " + "<br>" + "<b>Wind: </b>" + data["list"][5]["wind"]["speed"] + " MPH" + "<br>" + "<b>Humidity: </b>" + data["list"][5]["main"]["humidity"] + "%";
+
+            dayOne5.innerHTML = firstDay
+
+
+            var secondDay = data["list"][13]["dt_txt"] + "<br>" + "<b>Temp: </b>" + data['list'][13]["main"]["temp"] + "&#176F. " + "<br>" + "<b>Wind: </b>" + data["list"][13]["wind"]["speed"] + " MPH" + "<br>" + "<b>Humidity: </b>" + data["list"][13]["main"]["humidity"] + "%";
 
             dayTwo5.innerHTML = secondDay;
 
-            var thirdDay = "<b>Temp: </b>" + data['list'][3]["main"]["temp"] + "&#176F. " + "<br>" + "<b>Wind: </b>" + data["list"][3]["wind"]["speed"] + " MPH" + "<br>" + "<b>Humidity: </b>" + data["list"][3]["main"]["humidity"] + "%";
+            var thirdDay = data["list"][21]["dt_txt"] + "<br>" + "<b>Temp: </b>" + data['list'][21]["main"]["temp"] + "&#176F. " + "<br>" + "<b>Wind: </b>" + data["list"][21]["wind"]["speed"] + " MPH" + "<br>" + "<b>Humidity: </b>" + data["list"][21]["main"]["humidity"] + "%";
 
             dayThree5.innerHTML = thirdDay;
 
-            var fourthDay = "<b>Temp: </b>" + data['list'][4]["main"]["temp"] + "&#176F. " + "<br>" + "<b>Wind: </b>" + data["list"][4]["wind"]["speed"] + " MPH" + "<br>" + "<b>Humidity: </b>" + data["list"][4]["main"]["humidity"] + "%";
+            var fourthDay = data["list"][29]["dt_txt"] + "<br>" + "<b>Temp: </b>" + data['list'][29]["main"]["temp"] + "&#176F. " + "<br>" + "<b>Wind: </b>" + data["list"][29]["wind"]["speed"] + " MPH" + "<br>" + "<b>Humidity: </b>" + data["list"][29]["main"]["humidity"] + "%";
 
             dayFour5.innerHTML = fourthDay;
 
-            var fifthDay = "<b>Temp: </b>" + data['list'][5]["main"]["temp"] + "&#176F. " + "<br>" + "<b>Wind: </b>" + data["list"][5]["wind"]["speed"] + " MPH" + "<br>" + "<b>Humidity: </b>" + data["list"][5]["main"]["humidity"] + "%";
+            var fifthDay = data["list"][37]["dt_txt"] + "<br>" + "<b>Temp: </b>" + data['list'][37]["main"]["temp"] + "&#176F. " + "<br>" + "<b>Wind: </b>" + data["list"][37]["wind"]["speed"] + " MPH" + "<br>" + "<b>Humidity: </b>" + data["list"][37]["main"]["humidity"] + "%";
 
             dayFive5.innerHTML = fifthDay;
 
@@ -86,7 +84,6 @@ searchButtonEl.addEventListener("click", function () {
 
 
 
-localStorage.setItem(hour, text);
 
 
 // var currentDate = moment().format("dddd, MMMM Do")
