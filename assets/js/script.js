@@ -1,4 +1,4 @@
-//variables 
+//variables for DOM elements
 var searchButtonEl = document.querySelector(".search");
 var inputValueEl = document.querySelector(".inputValue");
 var nameEl = document.querySelector(".name");
@@ -15,6 +15,7 @@ var todayDate = document.querySelector(".currentDay")
 
 
 
+//Current day weather data pull from openweathermap api
 searchButtonEl.addEventListener("click", function () {
     fetch('https://api.openweathermap.org/data/2.5/weather?q=' + inputValueEl.value + '&appid=529b41dd58ddfd8a41cab95232af43ae&units=imperial')
         .then(response => response.json())
@@ -27,6 +28,7 @@ searchButtonEl.addEventListener("click", function () {
             var humidityValue = "<b>Humidity: </b>" + data["main"]['humidity'] + "%";
             var uvIndexValue = ["<b>UV Index: </b>"];
 
+            //adding data from variables above to DOM elements
             nameEl.innerHTML = nameValue;
             tempEl.innerHTML = tempValue;
             windEl.innerHTML = windValue;
@@ -38,7 +40,7 @@ searchButtonEl.addEventListener("click", function () {
 
 
 
-// five-day api call
+// five-day forecast api call
 searchButtonEl.addEventListener("click", function () {
     fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + inputValueEl.value + '&appid=529b41dd58ddfd8a41cab95232af43ae&units=imperial')
         .then(response => response.json())
@@ -69,22 +71,6 @@ searchButtonEl.addEventListener("click", function () {
             dayFive5.innerHTML = fifthDay;
 
 
-
-            // var firstDayTime = data["list"][1]["dt_txt"]
-
-
-
-
-
-
-
-
         })
 })
 
-
-
-
-
-// var currentDate = moment().format("dddd, MMMM Do")
-//             $("#currentDay").text(currentDate)
