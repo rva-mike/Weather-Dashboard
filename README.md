@@ -7,3 +7,4 @@ This web application uses the server-side API, OpenWeather One Call API, to retr
 
 
 ## Screenshot
+![weather-dashboard](https://user-images.githubusercontent.com/105617274/177630815-cfa58afa-ebb3-4011-8dd1-f5ab6648d785.png)
